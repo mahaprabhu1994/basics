@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Child from './Child'
 function Parents() {
     // const name = "Mahaprabhu";
-    const [name, setName] = useState('Arun');
+    // const [name, setName] = useState('Arun');
+    const name = "Maha"
     const [mark, setMark] = useState(false);
     const markFunc = () => {
         setMark(!mark);

@@ -1,18 +1,25 @@
 {
   "user": [
     {
-      "FirstName": "mahaprabhu",
+      "FirstName": "mahaprabhu-edit",
       "LastName": "boominathan",
       "PhoneNumber": "08110055500",
       "email": "mahaprabhu1994@gmail.com",
       "id": 2
     },
     {
-      "FirstName": "ganesh",
-      "LastName": "boominathan",
-      "PhoneNumber": "08110055500",
-      "email": "mahaprabhu1994@gmail.com",
+      "FirstName": "maha4",
+      "LastName": "edit-2",
+      "PhoneNumber": "8823434",
+      "email": "9993434",
       "id": 3
+    },
+    {
+      "FirstName": "ganeshsadad",
+      "LastName": "g",
+      "PhoneNumber": "45454",
+      "email": "maaa@gmail.com",
+      "id": 4
     }
   ],
   "posts": [

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 function Navbar() {
 
 
@@ -9,7 +10,10 @@ function Navbar() {
             <Link to='/' className=' m-auto'>Home</Link>
             <Link to='/contextapi' className=' m-auto'>Prop Drilling</Link>
             <Link to='/crud' className=' m-auto'>Create</Link>
-            <Link to='/reports' className=' m-auto'>Reports</Link>
+            <Link to='/reports' className=' m-auto'>
+                Reports
+            </Link>
+
         </div>
     )
 }

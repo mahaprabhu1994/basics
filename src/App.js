@@ -11,6 +11,8 @@ import MFplans from './Components/MFplans';
 import Navbar2 from './ContextAPI/starter/Navbar2';
 import Parents from './ContextAPI/actual/Parents';
 import Create from './CRUD/Create';
+import Edit from './CRUD/Edit';
+import Parent from './ContextAPI/Test/Parent';
 
 
 
@@ -30,10 +32,11 @@ function App() {
         <Route path='/contextapistarter' element={<Navbar2 />} />
         <Route path='/contextapi' element={<Parents />} />
         <Route path='/crud' element={<Create />} />
-
-
+        <Route path='/edit' element={<Edit />} />
+        <Route path='/contaxtapi2' element={<Parent />} />
       </Routes>
     </BrowserRouter>
+
   )
 }
 
