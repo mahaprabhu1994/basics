@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React from 'react'
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router';
 import { API_USER } from '../Constants/URL';
@@ -9,7 +9,7 @@ function Edit() {
     const navigate = useNavigate();
     const location = useLocation();
     const editValue = location.state;
-    console.log(location)
+    console.log(location);
     const id = editValue.id;
     const name = editValue.FirstName;
     const lastname = editValue.LastName;

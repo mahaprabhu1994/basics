@@ -13,6 +13,8 @@ import Parents from './ContextAPI/actual/Parents';
 import Create from './CRUD/Create';
 import Edit from './CRUD/Edit';
 import Parent from './ContextAPI/Test/Parent';
+import NestedForm from './Nested Objects/NestedObj';
+import MultiStepForm from './Multi_step_Form/MultiStepForm';
 
 
 
@@ -34,6 +36,8 @@ function App() {
         <Route path='/crud' element={<Create />} />
         <Route path='/edit' element={<Edit />} />
         <Route path='/contaxtapi2' element={<Parent />} />
+        <Route path='/nestedobject' element={<NestedForm />} />
+        <Route path='/multistep' element={<MultiStepForm />} />
       </Routes>
     </BrowserRouter>
 

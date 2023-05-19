@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { API_USER } from '../Constants/URL'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
-
+import Popup from 'reactjs-popup';
+import Modal from '../CRUD/Modal';
 function Reports() {
     const [data, setValue] = useState([]);
 
@@ -42,10 +42,21 @@ function Reports() {
                                     <td>{value.LastName}</td>
                                     <td>{value.PhoneNumber}</td>
                                     <td>{value.email}</td>
-                                    <td>
+                                    {/* <td>
                                         <button><Link to={'/edit'} state={value} >Edit</Link></button>
+                                    </td> */}
 
+                                    <td>
+                                        <Popup trigger={<button> Edit</button>} position="bottom center">
+                                            <>
+                                                <div className="bg-green-200 p-4">
+                                                    <Modal formValue={value} />
+                                                </div>
+                                            </>
+                                        </Popup>
                                     </td>
+
+
                                     <td >
                                         <button onClick={() => { deleteUser(value.id) }}>Delete</button>
                                     </td>

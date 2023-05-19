@@ -1,25 +1,40 @@
 {
-  "user": [
+  "nestedObj": [
     {
-      "FirstName": "mahaprabhu-edit",
-      "LastName": "boominathan",
-      "PhoneNumber": "08110055500",
-      "email": "mahaprabhu1994@gmail.com",
+      "name": "ravi-edit",
+      "age": 27,
+      "address": "cbe-2",
+      "funds": {
+        "mf": "reliance-2",
+        "stocks": "supremevilla-2"
+      },
       "id": 2
     },
     {
-      "FirstName": "maha4",
-      "LastName": "edit-2",
-      "PhoneNumber": "8823434",
-      "email": "9993434",
-      "id": 3
+      "name": "maha",
+      "age": 28,
+      "address": "cbe",
+      "funds": {
+        "mf": "supremevilla",
+        "stocks": "TATA"
+      },
+      "id": 4
+    }
+  ],
+  "user": [
+    {
+      "FirstName": "durai",
+      "LastName": "nattu",
+      "PhoneNumber": "8001188800",
+      "email": "mahaee@gamil.com",
+      "id": 6
     },
     {
-      "FirstName": "ganeshsadad",
-      "LastName": "g",
-      "PhoneNumber": "45454",
-      "email": "maaa@gmail.com",
-      "id": 4
+      "FirstName": "akashaaa",
+      "LastName": "akas",
+      "PhoneNumber": "8899988777",
+      "email": "aka@gmail.com",
+      "id": 7
     }
   ],
   "posts": [
