@@ -8,14 +8,17 @@ import Navbar from './Components/Navbar';
 import Address from './Components/Address';
 import BasicDetails from './Components/BasicDetails';
 import MFplans from './Components/MFplans';
-import Navbar2 from './ContextAPI/starter/Navbar2';
-import Parents from './ContextAPI/actual/Parents';
+import Navbar2 from './ContextAPI/actual-2/Navbar2';
+import Parents from './ContextAPI/actual-1/Parents';
 import Create from './CRUD/Create';
 import Edit from './CRUD/Edit';
-import Parent from './ContextAPI/Test/Parent';
+// import Parent from './ContextAPI/Test/Parent';
+import Parent from './ContextAPI/Practical/Parent';
 import NestedForm from './Nested Objects/NestedObj';
 import MultiStepForm from './Multi_step_Form/MultiStepForm';
 import Form from './Multi_Step_form_with_Nested_Obj/Form';
+import SimpleState_action from './UseReducer/SimpleState_action';
+import ComplexState from './UseReducer/ComplexState';
 
 
 function App() {
@@ -39,6 +42,9 @@ function App() {
         <Route path='/nestedobject' element={<NestedForm />} />
         <Route path='/multistep' element={<MultiStepForm />} />
         <Route path='/multistepnested' element={<Form />} />
+        <Route path='/contaxtpractical' element={<Parent />} />
+        <Route path='/reducer' element={<SimpleState_action />} />
+        <Route path='/reducer_comp' element={<ComplexState />} />
       </Routes>
     </BrowserRouter>
 
