@@ -1,16 +1,16 @@
 import React, { useReducer } from 'react'
 
 const initialState = 0;
-const reducer = (state, action) => {
+const reducer = (prevState, action) => {
     switch (action) {
         case 'increment':
-            return state + 1;
+            return prevState + 1;
         case 'decrement':
-            return state - 1;
+            return prevState - 1;
         case 'reset':
             return initialState;
         default:
-            return state;
+            return prevState;
     }
 }
 function SimpleState_action() {

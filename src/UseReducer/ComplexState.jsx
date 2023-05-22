@@ -4,12 +4,12 @@ const initialState = {
     firstValue: 0,
     secValue: 10,
 };
-const reducer = (state, action) => {
+const reducer = (prevState, action) => {
     switch (action.type) {
-        case 'increment': return { firstValue: state.firstValue + action.value };
-        case 'decrement': return { firstValue: state.firstValue - action.value };
+        case 'increment': return { firstValue: prevState.firstValue + action.value };
+        case 'decrement': return { firstValue: prevState.firstValue - action.value };
         case 'reset': return initialState;
-        default: return state;
+        default: return prevState;
     }
 }
 
