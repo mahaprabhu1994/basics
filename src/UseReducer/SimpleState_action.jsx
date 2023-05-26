@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react'
 
-const initialState = 0;
+const initialState = 100;
 const reducer = (prevState, action) => {
     switch (action) {
         case 'increment':
-            return prevState + 1;
+            return prevState + 20;
         case 'decrement':
             return prevState - 1;
         case 'reset':
@@ -13,6 +13,8 @@ const reducer = (prevState, action) => {
             return prevState;
     }
 }
+
+
 function SimpleState_action() {
 
     const [count, dispatch] = useReducer(reducer, initialState);

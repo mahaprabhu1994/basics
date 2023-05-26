@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 
@@ -9,22 +9,28 @@ const initialState = {
 const reducer = (prevState, action) => {
 
     switch (action.type) {
-        case 'modulo': return { first: prevState.first + action.value }
-        case 'multiply': return { first: prevState.first * action.value }
-        case 'dividend': return { first: prevState.first / action.value }
+        case 'modulo': return { first: prevState.first + action.value1 }
+        case 'multiply': return { first: prevState.first * action.value1 }
+        // case 'dividend': return { first: prevState.first / action.value1 }
+        case 'reset': return { first: action.value1 }
         default: return prevState;
 
     }
 }
 function SimpleCalculate() {
     const [count, dispatch] = useReducer(reducer, initialState);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { isDirty, isSubmitted } } = useForm();
     const [num, setnum] = useState();
+    const ref = useRef(null);
+    const reff = ref.current;
+    console.log(reff)
     const onSubmit = (value) => {
         setnum(value)
     }
     console.log(num);
-    console.log(count)
+    console.log(count);
+
+
     return (
         <div>
             <div>
@@ -32,16 +38,28 @@ function SimpleCalculate() {
             </div>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type='number' {...register("num1", { valueAsNumber: true })} />
-                    <input type='number' {...register("num2", { valueAsNumber: true })} />
+                    <input ref={ref} type='number' {...register("num1", { valueAsNumber: true })} />
+                    <input ref={ref} type='number' {...register("num2", { valueAsNumber: true })} />
                     <input type='submit' />
+                    <h1>Count is :{count.first}</h1>
+                    <h1>Count is :{count.second}</h1>
+                    <button onClick={() => {
+                        if (isSubmitted && isDirty) {
+                            dispatch({ type: 'modulo', value1: (num.num1) })
+                        } else {
+                            alert("please fill above input field")
+                        }
+                    }}>modulo</button>
+                    <button onClick={() => {
+                        if (isSubmitted && isDirty) { dispatch({ type: 'multiply', value1: (num.num2) }) }
+                        else {
+                            alert("please enter the value above field")
+                        }
+
+                    }}>multiply</button>
+                    {/* <button onClick={() => { dispatch({ type: 'dividend', value1: (num.num2) }) }}>dividend</button> */}
+                    <button onClick={() => { dispatch({ type: 'reset', value1: 0 }) }}>reset</button>
                 </form>
-                <h1>Count is :{count.first}</h1>
-                <h1>Count is :{count.second}</h1>
-                <button onClick={() => { dispatch({ type: 'modulo', value: (num.num1) }) }}>modulo</button>
-                <button onClick={() => { dispatch({ type: 'multiply', value: (num.num2) }) }}>multiply</button>
-                <button onClick={() => { dispatch({ type: 'dividend', value: (num.num2) }) }}>dividend</button>
-                <button onClick={() => { dispatch('reset') }}>reset</button>
             </div>
         </div>
     )
