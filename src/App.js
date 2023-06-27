@@ -2,7 +2,11 @@ import React from 'react';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Parent from './useReducer_with_useContext/Parent';
+import Error from './Error';
+import Filter from './Filter_Values/Filter';
+import Cards from './NestedRoutes_With_Filters/Cards';
+import NestedRoute from './NestedRoutes_With_Filters/NestedRoute';
+import UserList from './NestedRoutes_With_Filters/UserList';
 // import Parent from './ContextAPI/Test/Parent';
 // import Parent from './ContextAPI/Practical/Parent';
 // import ComplexState from './UseReducer/ComplexState';
@@ -34,7 +38,14 @@ function App() {
         {/* <Route path='/simplecalc' element={<SimpleCalculate />} /> */}
         {/* <Route path='/multiplereducer' element={<MultipleReducer />} /> */}
         {/* <Route path='/slidepane' element={<SlidingPanes />} /> */}
-        <Route path='/' element={<Parent />} />
+        {/* <Route path='/' element={<Parent />} /> */}
+        <Route path='*' element={<Error />} />
+        <Route path='/' element={<NestedRoute />} />
+        <Route path='userlist' element={<UserList />} />
+        <Route path='userlist/:productid' element={<Cards />} />
+        {/* <Route path='filter2' element={<SearchBox />} />
+        <Route path='main' element={<Main />} /> */}
+        <Route path='filter' element={<Filter />} />
       </Routes>
     </BrowserRouter>
 
